@@ -17,7 +17,7 @@ For example, when we get an alert that a disk is getting full, you would want to
 | ------------------------------------------- | ------- |
 | [Python](http://www.mongodb.org/downloads) | `~ ^2.7`  |
 
-> _Updating to the latest releases is recommended_.
+> &npsp;Updating to the latest releases is recommended&npsp;.
 
 If python and ssh is already installed in your machine, run the following commands to validate the versions:
 
@@ -30,7 +30,7 @@ If your versions are lower than the prerequisite versions, you should update.
 
 #### Cloning Repository
 
-1. Open a Terminal / Command Line / Bash Shell in your projects directory (_i.e.: `/yourprojectdirectory/`_)
+1. Open a Terminal / Command Line / Bash Shell in your projects directory (&npsp;i.e.: `/yourprojectdirectory/`&npsp;)
 2. Clone the linix-disk-usage-util repository
 
 ```shell
@@ -55,19 +55,19 @@ pip install -r requirements.txt
 
 ### Script Usage
 
-[niraj@niraj]$python get_diskusage.py --help<br />
-usage: get_diskusage.py [-h] [-i HOST] [-u USER] [-p PASSWORD] [-f FILENAME]<br />
-______________________________-m MOUNTPOINT<br />
+[niraj@niraj]$python get&npsp;diskusage.py --help<br />
+usage: get&npsp;diskusage.py [-h] [-i HOST] [-u USER] [-p PASSWORD] [-f FILENAME]<br />
+&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;-m MOUNTPOINT<br />
 <br />
 optional arguments:<br />
-  -h,_--help________________show this help message and exit<br />
-  -i_HOST,_--host_HOST______The hostname or IP address of the server to connect<br />
-  -u_USER,_--user_USER _____The remote server username preferably a sudo user<br />
-  -p_PASSWORD,_--password___PASSWORD<br />
-____________________________The password of the remote server user<br />
+  -h,&npsp;--help&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;show this help message and exit<br />
+  -i&npsp;HOST,&npsp;--host&npsp;HOST&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;The hostname or IP address of the server to connect<br />
+  -u&npsp;USER,&npsp;--user&npsp;USER &npsp;&npsp;&npsp;&npsp;&npsp;The remote server username preferably a sudo user<br />
+  -p&npsp;PASSWORD,&npsp;--password&npsp;&npsp;&npsp;PASSWORD<br />
+&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;The password of the remote server user<br />
   -f FILENAME, --filename FILENAME<br />
-____________________________Load server credentials from configuration file,<br />
-____________________________provide absolute path of the config file<br />
+&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;Load server credentials from configuration file,<br />
+&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;provide absolute path of the config file<br />
   -m MOUNTPOINT, --mountpoint MOUNTPOINT<br />
-____________________________Mount point of the server directory structure<br />
+&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;&npsp;Mount point of the server directory structure<br />
 [niraj@niraj]$<br />
