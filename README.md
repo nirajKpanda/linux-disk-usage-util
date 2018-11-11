@@ -52,3 +52,22 @@ Once you have linix-disk-usage-util cloned, before you start the application, yo
 ```bash
 pip install -r requirements.txt
 ```
+
+### Script Usage
+
+[niraj@niraj]$python get_diskusage.py --help
+usage: get_diskusage.py [-h] [-i HOST] [-u USER] [-p PASSWORD] [-f FILENAME]
+                        -m MOUNTPOINT
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i HOST, --host HOST  The hostname or IP address of the server to connect
+  -u USER, --user USER  The remote server username preferably a sudo user
+  -p PASSWORD, --password PASSWORD
+                        The password of the remote server user
+  -f FILENAME, --filename FILENAME
+                        Load server credentials from configuration file,
+                        provide absolute path of the config file
+  -m MOUNTPOINT, --mountpoint MOUNTPOINT
+                        Mount point of the server directory structure
+[niraj@niraj]$
