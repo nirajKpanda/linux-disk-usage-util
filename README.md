@@ -57,17 +57,17 @@ pip install -r requirements.txt
 
 [niraj@niraj]$python get_diskusage.py --help<br />
 usage: get_diskusage.py [-h] [-i HOST] [-u USER] [-p PASSWORD] [-f FILENAME]<br />
-                        -m MOUNTPOINT<br />
+______________________________-m MOUNTPOINT<br />
 <br />
 optional arguments:<br />
-  -h, --help            show this help message and exit<br />
-  -i HOST, --host HOST  The hostname or IP address of the server to connect<br />
-  -u USER, --user USER  The remote server username preferably a sudo user<br />
-  -p PASSWORD, --password PASSWORD<br />
-                        The password of the remote server user<br />
+  -h,_--help________________show this help message and exit<br />
+  -i_HOST,_--host_HOST______The hostname or IP address of the server to connect<br />
+  -u_USER,_--user_USER _____The remote server username preferably a sudo user<br />
+  -p_PASSWORD,_--password___PASSWORD<br />
+____________________________The password of the remote server user<br />
   -f FILENAME, --filename FILENAME<br />
-                        Load server credentials from configuration file,<br />
-                        provide absolute path of the config file<br />
+____________________________Load server credentials from configuration file,<br />
+____________________________provide absolute path of the config file<br />
   -m MOUNTPOINT, --mountpoint MOUNTPOINT<br />
-                        Mount point of the server directory structure<br />
+____________________________Mount point of the server directory structure<br />
 [niraj@niraj]$<br />
