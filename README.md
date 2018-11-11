@@ -41,7 +41,7 @@ This will download the entire linix-disk-usage-util repo to your project directo
 
 #### Setup Your Upstream
 
-1. Change directory to the new node-shopkart directory (`cd linix-disk-usage-util`)
+1. Change directory to the new linix-disk-usage-util directory (`cd linix-disk-usage-util`)
 
 Congratulations, you now have a local copy of the linix-disk-usage-util project!
 
