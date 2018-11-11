@@ -71,3 +71,27 @@ optional arguments:<br />
   -m MOUNTPOINT, --mountpoint MOUNTPOINT<br />
                         Mount point of the server directory structure<br />
 [niraj@niraj]$<br />
+
+### Run in local server
+
+[niraj@niraj]$python get_diskusage.py -i localhost -m /tmp
+INFO:User requested to fetch local server file disk usage.....
+Mount point is : /tmp
+{
+    "/tmp/unity_support_test/tmp0": 0, 
+    "/tmp/e3546f11-84f5-4c95-90e9a5af-36eeff8e/tmpdmp": 221248, 
+    "/tmp/config-err-0PdOED": 0, 
+    "/tmp//tmporg/tmpchromium/tmpChromium/tmpMNLHuI/Skype1_5/tmppng": 652, 
+    "/tmp/a": 349, 
+    "/tmp//tmpX0-lock": 11
+}
+[niraj@niraj]$
+
+### Run in remote server
+python get_diskusage.py -i <ip-address> -u <username> -p <password> -m <mountpoint>
+
+
+### Load server credetnitals from config file
+[niraj@nira]$python get_diskusage.py -f server.config -m /tmp
+
+
