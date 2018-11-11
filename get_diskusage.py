@@ -1,8 +1,5 @@
 #!/usr/bin/env python
-
-
 __author__ = "nirajKpanda"
-
 
 import os
 import re
@@ -12,10 +9,8 @@ import argparse
 import commands
 import paramiko
 
-
 # global variable declarations
 CMD = "sudo find {} -type f -printf '%p %s\n'"
-
 
 def parse_command_line():
     parser = argparse.ArgumentParser()
@@ -38,7 +33,6 @@ def parse_command_line():
 
     return parser.parse_args()	
 
-
 def print_diskusage(data, _type="json"):
 	"""
 		param data: dictionary of file as key and file size in bytes as values
@@ -49,7 +43,6 @@ def print_diskusage(data, _type="json"):
 	"""
 	data = json.dumps(data, indent=4)
 	print(data)
-
 
 # not used
 def get_all_files_with_path(_dir):
@@ -62,7 +55,6 @@ def get_all_files_with_path(_dir):
 		except OSError as e:
 			continue
 	return all_files
-
 
 # preparing output data before jsonifing
 def prepare_output(output, mountpoint):
@@ -77,7 +69,6 @@ def prepare_output(output, mountpoint):
 			continue # unpacking issue
 	
 	return file_and_size_dict
-
 
 # based on the user input collecting disk usage data
 def get_file_and_size(host="localhost", user="", password="", mountpoint="."):
@@ -107,7 +98,6 @@ def get_file_and_size(host="localhost", user="", password="", mountpoint="."):
     		print("ERROR:Caught exception while running command:{} in server:{};Exception : {}".
     			format(CMD.format(mountpoint), host, e))
 
-
 def main():
 	opts = parse_command_line()
 
@@ -134,7 +124,6 @@ def main():
 
 	# build json output to show in console
 	print_diskusage(file_and_size_dict)	
-
 
 if __name__ == '__main__':
 	main()
