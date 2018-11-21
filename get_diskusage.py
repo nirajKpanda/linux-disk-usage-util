@@ -5,12 +5,14 @@ import os
 import re
 import sys
 import json
+import logging
 import argparse
 import commands
 import paramiko
 
 # global variable declarations
 CMD = "sudo find {} -type f -printf '%p %s\n'"
+
 
 def parse_command_line():
     parser = argparse.ArgumentParser()
@@ -42,7 +44,7 @@ def print_diskusage(data, _type="json"):
 		return None
 	"""
 	data = json.dumps(data, indent=4)
-	print(data)
+	logging.debug(data)
 
 # not used
 def get_all_files_with_path(_dir):
@@ -73,29 +75,29 @@ def prepare_output(output, mountpoint):
 # based on the user input collecting disk usage data
 def get_file_and_size(host="localhost", user="", password="", mountpoint="."):
     if host == "localhost":
-    	print("INFO:User requested to fetch local server file disk usage.....")
-    	print("Mount point is : {}".format(mountpoint))
+    	logging.debug("INFO:User requested to fetch local server file disk usage.....")
+    	logging.debug("Mount point is : {}".format(mountpoint))
     	cmd = CMD.format(mountpoint)
     	status, output = commands.getstatusoutput(cmd)
     	if status == 0:
     		return prepare_output(output, mountpoint)
     	else:
-    		print("ERROR:Command : {} || error status code : {}".format(cmd, status))
+    		logging.debug("ERROR:Command : {} || error status code : {}".format(cmd, status))
     elif host != "localhost" and user != "" and password != "":
-    	print("INFO:User requested to fetch from remote server.")
-    	print("Mount point is : {}".format(mountpoint))
+    	logging.debug("INFO:User requested to fetch from remote server.")
+    	logging.debug("Mount point is : {}".format(mountpoint))
     	try:
     		file_and_size_dict = dict()
     		s = paramiko.SSHClient()
-    		print("SSHClient intialized....")
+    		logging.debug("SSHClient intialized....")
     		s.connect(host, 22, user, password)
-    		print("SSHClient connected....")
+    		logging.debug("SSHClient connected....")
     		(stdin, stdout, stderr) = s.exec_command(CMD.format(mountpoint))
     		if not stderr:
     			return prepare_output(stdout, mountpoint)
     		s.close()
     	except Exception as e:
-    		print("ERROR:Caught exception while running command:{} in server:{};Exception : {}".
+    		logging.debug("ERROR:Caught exception while running command:{} in server:{};Exception : {}".
     			format(CMD.format(mountpoint), host, e))
 
 def main():
@@ -120,10 +122,16 @@ def main():
 				user=credentials.get('user'), password=credentials.get('password'), \
 				mountpoint=opts.mountpoint)
 	else:
-		print("WARN:Unknown arguments.See usage : {} -h".format(sys.argv[0]))		
+		logging.debug("WARN:Unknown arguments.See usage : {} -h".format(sys.argv[0]))		
 
 	# build json output to show in console
 	print_diskusage(file_and_size_dict)	
 
 if __name__ == '__main__':
+	logger = logging.basicConfig(
+		level=logging.DEBUG,
+		filename="app.log",
+		filemode="a",
+		format="%(asctime) %(name)s - %(levelname)s - %(message)s"
+	)
 	main()
