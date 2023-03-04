@@ -1,6 +1,6 @@
 # Project Summary
 
-In our production environment, we don’t allow developers to SSH into servers without leadership approval. Therefore, it is critical that our team provide tools to allow developers to debug problems using our monitoring tools.
+In our app environment, we don’t allow developers to SSH into servers without leadership approval. Therefore, it is critical that our team provide tools to allow developers to debug problems using our monitoring tools.
 
 For example, when we get an alert that a disk is getting full, you would want to know what files are using up all of the space.
 
